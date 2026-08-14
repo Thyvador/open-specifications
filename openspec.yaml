@@ -1,0 +1,15 @@
+application:
+  name: OpenSpec
+  description: OpenSpec is a specification for open-source projects.
+  version: 0.0.1
+  type: single-domain
+teams:
+  - name: OpenSpec
+    description: OpenSpec maintainers
+    members:
+      - type: human
+        name: thyavdor
+        email: ahiltcher.pro@gmail.com
+      - type: agent
+        name: chatgpt-5-mini
+        description: An AI assistant for OpenSpec
