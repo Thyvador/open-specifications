@@ -22,16 +22,20 @@ The `openspec.yaml` file at the repository root contains high-level project meta
 
 The repository `openspec.yaml` SHOULD contain the following top-level fields. Fields not listed here are allowed but should be used sparingly.
 
-- application: Metadata about the project. Typical keys:
-  - name: human-friendly project name
-  - description: short description of the project
-  - version: semantic version of the spec or repository snapshot
-  - type: `single-domain` or `multi-domain` to indicate repo scope
-
-- teams: Sequence of team entries. Each team contains:
-  - name: team name
-  - description: optional human description
-  - members: sequence of member objects. Each member has `type` (human|agent), `name`, and optional `email` or `description`.
+- `application`: Metadata about the project. Typical keys:
+  - `name`: human-friendly project name
+  - `description`: short description of the project
+  - `version`: semantic version of the spec or repository snapshot
+  - `type`: `single-domain` or `multi-domain` to indicate repo scope
+- `teams`: Sequence of team entries. Each team contains:
+  - `name`: team name
+  - `description`: optional human description
+  - `members`: sequence of member objects. Each member has
+    - `type`: type of the agent (human|agent|process) 
+    - `name`: name of the member
+    - `email`: (optional) contact email for human members
+    - `description`: (optional) description of the member (role, ...) 
+    - `models`: (optional) field describing models used by an agent member
 
 ## Example
 

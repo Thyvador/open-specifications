@@ -11,5 +11,8 @@ teams:
         name: thyavdor
         email: ahiltcher.pro@gmail.com
       - type: agent
-        name: chatgpt-5-mini
+        name: copilot
+        models:
+          - chatgpt-5-mini
+          - claude-haiku-4.5
         description: An AI assistant for OpenSpec

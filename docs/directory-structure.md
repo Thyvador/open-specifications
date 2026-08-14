@@ -24,6 +24,7 @@ This repository layout is optimized for a single application specification. The 
 The tree below shows the recommended layout for a single-app repository. Use it as a template and adapt only when there is a clear reason.
 
 ```text
+├── docs/                         # Software documentation (how tos, guides, ...)
 ├── specs/
 │   ├── PRD.md                    # Product Requirement Definition: high-level goals and success metrics
 │   ├── features/
@@ -46,17 +47,16 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 │   │       └── adr.md             # Architecture Decision Record
 │   ├── components/
 │   │   └── <component-name>/
-│   │       └── component.md       # Component/service responsibilities and interfaces
-│   ├── apis/                      # Optional: API contracts and API guidance
-│   │   └── <api-name>/
-│   │       ├── openapi.yaml       # OpenAPI contract
-│   │       └── api.md
-│   ├── events/                    # Optional: async event contracts (AsyncAPI)
-│   │   └── <event-name>/
-│   │       └── asyncapi.yaml
+│   │       ├── component.md       # Component/service responsibilities and interfaces 
+│   │       ├── apis/                      # Optional: API contracts and API guidance
+│   │       │   └── <api-name>/
+│   │       │       ├── openapi.yaml       # OpenAPI contract
+│   │       │       └── api.md
+│   │       └── events/                    # Optional: async event contracts (AsyncAPI)
+│   │           └── <event-name>/
+│   │               └── asyncapi.yaml
 │   └── model/                     # Optional: domain model, ontologies, change log
-│       ├── <ontology>.ttl         # RDF/Turtle ontology (optional)
-│       └── log.md                 # Model change log and migration notes
+│       ├── <domain>.ttl           # RDF/Turtle ontology (optional)
 ├── ops/
 │   ├── runbooks/
 │   │   └── <date>-<title>.md      # Operational runbooks and incident playbooks
@@ -71,6 +71,7 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 ```
 
 ## Folder explanations
+
 - `specs/` — Primary location for product documentation. Keep narrative content, decision records, and structured artifacts here. Files under `specs/` are the canonical source of truth for product behaviour.
 - `PRD.md` — High-level product requirements. Describe goals, target users, non-functional requirements, and success metrics.
 - `features/` — Each feature gets its own folder containing a `feature.md` for narrative, `rules.md` for business logic, and a `user-stories/` subfolder for testable stories.
@@ -90,9 +91,38 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 - `AGENTS.md` — Guidelines for bots and automated tools: where to write, which files they may edit, and verification rules.
 - `README.md` — Human-facing landing page that explains repository purpose and links into important spec pages.
 
+## Changelog
+
+A `log.md` file MAY appear at any level of the hierarchy to record the history of changes to that scope. This follows the Open Knowledge Format (OKF) convention for log files. The format is a flat list of date-grouped entries, newest first:
+
+```markdown
+# Directory Update Log
+
+## 2026-08-14
+* **Create**: Added file-format definitions and examples for all spec types.
+* **Update**: Enhanced directory-structure documentation with changelog guidance.
+
+## 2026-08-13
+* **Create**: Created foundational spec structure and AGENTS.md guidelines.
+```
+
+Date headings MUST use ISO 8601 `YYYY-MM-DD` format. Log entries are prose; the leading bold word (`**Create**`, `**Update**`, `**Deprecate**`, `**Fix**`) is a convention to indicate the type of change.
+
+Use `log.md` to track:
+- Creation of new major artifacts or subdirectories
+- Significant updates to existing specifications
+- Deprecation or removal of features or files
+- Breaking changes to contracts (APIs, data models)
+
+Benefits of maintaining a log:
+- Agents can quickly understand what has changed and when
+- Humans can review history without relying on git log
+- Supports temporal queries like "what changed this month"
+
 ## Conventions and tips
 
 - Use kebab-case for directory names and `YYYY-MM-DD` for ADR timestamps.
 - Keep frontmatter consistent across `specs/` files so tooling can index reliably.
 - Place machine-readable artifacts in dedicated subfolders (`apis/`, `events/`, `model/`, `examples/`) rather than inline in narrative files.
 - Prefer small files with a single responsibility; avoid very large monolithic documents.
+- Maintain a root-level `log.md` to track major milestones and breaking changes.
