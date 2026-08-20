@@ -47,6 +47,7 @@ Agents must format Markdown and frontmatter according to `docs/file-format.md`. 
 - Lists must be surrounded by blank lines.
  - Headings must use ATX style (##, ###) rather than setext underlines. This repository enforces ATX headings.
 - Use fenced code blocks with language tags for machine-readable snippets (`json`, `yaml`, `openapi`).
+- Link documents with Markdown links using repository-root-relative paths, for example `[reference name](/path/to/ref)`, not inline code spans such as `/path/to/ref`.
 - Keep frontmatter keys stable; do not invent ad-hoc keys without repository-level agreement.
 
 

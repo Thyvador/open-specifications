@@ -17,6 +17,8 @@ Open Specifications is an open-source software specification standard. It define
 - Minimal: small surface area, easy to adopt
 - Extensible: allow profiles, versioning, and optional sections
 
+See [Software Specification](/docs/software-specification/README.md) for more detailed informations on how to specify a software product.
+
 ## Recommended Files & Layout
 
 See. [Directory structure](/docs/directory-structure.md) and [File format](/docs/file-format.md)
