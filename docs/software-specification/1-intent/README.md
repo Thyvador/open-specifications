@@ -41,7 +41,9 @@ Complete intent definition in this order:
 
 ## Define the Product "WHY"
 
-<!-- TODO -->
+The product WHY explains the meaningful change the product exists to create. It connects an observed problem to the people affected, the outcome they need, and the value that outcome provides to the business or wider system. The WHY is not a feature or implementation choice; it is the reason any solution should exist.
+
+Start here because every later decision depends on this context. A clear WHY helps the team distinguish important problems from symptoms, evaluate competing solutions, set boundaries, and measure whether the product made a difference. Without it, teams can build the wrong thing efficiently, optimize for activity instead of outcomes, or allow scope and technical preferences to define the product by accident.
 
 ### Start with the observable problem
 
@@ -269,4 +271,3 @@ Before moving to design, confirm:
 ## Outcome
 
 Intent is ready for functional and technical design when the team can explain WHY the product matters and WHAT it should and should not do, including high-level capabilities, non-functional constraints, and measurement plan, without prematurely deciding HOW it will be built.
-
