@@ -24,56 +24,57 @@ This repository layout is optimized for a single application specification. The 
 The tree below shows the recommended layout for a single-app repository. Use it as a template and adapt only when there is a clear reason.
 
 ```text
-├── docs/                         # Software documentation (how tos, guides, ...)
 ├── specs/
-│   ├── PRD.md                    # Product Requirement Definition: high-level goals and success metrics
+│   ├── DESIGN.md                           # Optional: design tokens (YAML frontmatter) + rationale for frontends
+│   ├── PRD.md                              # Product Requirement Definition: high-level goals and success metrics
 │   ├── features/
 │   │   └── <feature-name>/
-│   │       ├── feature.md         # Feature description: overview, scope, UX flows
-│   │       ├── rules.md           # Business rules and invariants for the feature
+│   │       ├── feature.md                  # Feature description: overview, scope, UX flows
+│   │       ├── rules.md                    # Business rules and invariants for the feature
 │   │       └── user-stories/
 │   │           └── us-<id>/
-│   │               └── user-story.md # Focused user story with acceptance criteria
+│   │               └── user-story.md       # Focused user story with acceptance criteria
 │   ├── personas/
 │   │   └── <persona-name>/
-│   │       └── persona.md         # Persona profile and motivations
-│   ├── inputs/                    # Raw inputs: interviews, research notes, spreadsheets
+│   │       └── persona.md                  # Persona profile and motivations
+│   ├── inputs/                             # Raw inputs: interviews, research notes, spreadsheets
 │   │   └── *
 │   ├── use-cases/
 │   │   └── <use-case-name>/
-│   │       └── use-case.md        # Interaction sequences, diagrams, edge cases
+│   │       └── use-case.md                 # Interaction sequences, diagrams, edge cases
 │   ├── adrs/
 │   │   └── <YYYY-MM-DD>-<adr-name>/
-│   │       └── adr.md             # Architecture Decision Record
+│   │       └── adr.md                      # Architecture Decision Record
 │   ├── components/
 │   │   └── <component-name>/
-│   │       ├── component.md       # Component/service responsibilities and interfaces 
-│   │       ├── apis/                      # Optional: API contracts and API guidance
+│   │       ├── component.md                # Component/service responsibilities and interfaces 
+│   │       ├── apis/                       # Optional: API contracts and API guidance
 │   │       │   └── <api-name>/
-│   │       │       ├── openapi.yaml       # OpenAPI contract
+│   │       │       ├── openapi.yaml        # OpenAPI contract
 │   │       │       └── api.md
-│   │       └── events/                    # Optional: async event contracts (AsyncAPI)
+│   │       └── events/                     # Optional: async event contracts (AsyncAPI)
 │   │           └── <event-name>/
 │   │               └── asyncapi.yaml
-│   └── model/                     # Optional: domain model, ontologies, change log
-│       ├── <domain>.ttl           # RDF/Turtle ontology (optional)
+│   └── language/                           # Optional: domain language, ontologies, change log
+│       ├── <domain>.ttl                    # RDF/Turtle ontology (optional)
 ├── ops/
 │   ├── runbooks/
-│   │   └── <date>-<title>.md      # Operational runbooks and incident playbooks
+│   │   └── <date>-<title>.md               # Operational runbooks and incident playbooks
 │   ├── releases/
-│   │   └── <version>.md           # Release notes and runbooks for versioned releases
-│   └── monitoring.md              # Key metrics, dashboards, and logs guidance
-├── src/                           # Implementation or reference implementations
-│   └── *                          # Source code
-├── openspec.yaml                  # Repository/project context (used by automation)
-├── AGENTS.md                      # Agent guidelines: how agents should read and modify repo
-└── README.md                      # Repository and product overview, navigation links
+│   │   └── <version>.md                    # Release notes and runbooks for versioned releases
+│   └── monitoring.md                       # Key metrics, dashboards, and logs guidance
+├── src/                                    # Implementation or reference implementations
+│   └── *                                   # Source code
+├── openspec.yaml                           # Repository/project context (used by automation)
+├── AGENTS.md                               # Agent guidelines: how agents should read and modify repo
+└── README.md                               # Repository and product overview, navigation links
 ```
 
 ## Folder explanations
 
 - `specs/` — Primary location for product documentation. Keep narrative content, decision records, and structured artifacts here. Files under `specs/` are the canonical source of truth for product behaviour.
 - `PRD.md` — High-level product requirements. Describe goals, target users, non-functional requirements, and success metrics.
+- `DESIGN.md` describing design tokens (YAML frontmatter) and human rationale. Use the DESIGN.md schema to expose colors, typography, spacing, component tokens, and exportable derivatives (Tailwind/CSS).
 - `features/` — Each feature gets its own folder containing a `feature.md` for narrative, `rules.md` for business logic, and a `user-stories/` subfolder for testable stories.
 - `personas/` — Short profiles of representative users. Use these to drive acceptance criteria and prioritization.
 - `inputs/` — Unprocessed inputs such as interview transcripts, raw research notes, and imported documents. Keep originals here to preserve provenance.
@@ -81,7 +82,7 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 - `adrs/` — Architecture Decision Records. Each ADR should be dated and contain context, alternatives, decision, and consequences.
 - `components/` — Documentation for technical components that the product relies on (datastore, cache, external services). Include interfaces and deployment notes.
 - `apis/` and `events/` — Machine-readable contract artifacts. Prefer `openapi.yaml` and `asyncapi.yaml` filenames and keep human guidance in adjacent `*.md` files.
-- `model/` — Optional domain models and ontologies. Use standard formats where appropriate and record changes in `log.md`.
+- `language/` — Optional domain languages and ontologies. Use standard formats where appropriate and record changes in `log.md`.
 - `ops/` — Operational documentation needed to run and monitor the product: runbooks, release guides, and monitoring definitions.
 - `src/` — Implementation.
 

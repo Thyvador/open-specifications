@@ -38,6 +38,8 @@ Add optional fields when they provide value for discovery, review, or automation
 - `stale_after`: ISO date after which the content should be considered stale.
 - `status`: One of `draft`, `stable`, or `deprecated`. Omit to imply `stable`. Use `draft` for in-progress work and `deprecated` for archival documents.
 - `for`: Only for `urn:open-specs:example` files. Reference the file for which the example is made.
+- `deprecates`: Link(s) to the resource(s) deprecated by the current resource.
+- `deprecated_by`: Link to the resource that deprecates the current resource.
 
 Use a stable frontmatter schema across the repository so agents can rely on the same keys in every file.
 

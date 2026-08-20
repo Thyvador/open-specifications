@@ -40,7 +40,8 @@ Design splits into two complementary tracks: functional design (what the product
 
 Functional design captures features, user stories, business rules, and the domain vocabulary (semantic language or ontology) used across the spec.
 
-- Semantic language / ontology: If you need canonical terms or an ontology, place machine-readable artifacts under `specs/model/`.
+- Semantic language / ontology: If you need canonical terms or an ontology, place machine-readable artifacts under `specs/language/`.
+- Design tokens / visual system: If product includes frontend (web, mobile, desktop), include an optional `specs/DESIGN.md` at repository root under `specs/`. Use YAML frontmatter for tokens (colors, typography, spacing, rounded, components) and prose for rationale. This file enables automated exports (Tailwind, CSS, token JSON) and linting via `npx @google/design.md lint docs/DESIGN.md`.
 - Features: For each feature, create `specs/features/<feature>/feature.md` describing purpose, scope, and UX flows.
 - User stories: Draft small, testable stories under `specs/features/<feature>/user-stories/us-<id>/user-story.md` with clear acceptance criteria.
 - Business rules: Record precise invariants and rule logic in `specs/features/<feature>/rules.md` so tests and agents can validate behavior.
@@ -57,6 +58,8 @@ Technical design captures architectural decisions, API and event contracts, and 
 - Events: Place AsyncAPI contracts under `specs/events/<event>/asyncapi.yaml` for event-driven designs.
 - Use cases: Document end-to-end sequences in `specs/use-cases/<name>/use-case.md`, including actors, components, and error handling.
 
+Design artifacts are useful for implementers and frontend engineers who need exact tokens and rationale.
+
 Technical artifacts are the canonical interface and integration contracts used by implementers and automated validation.
 
 ## 3. Develop (handoff)
@@ -68,6 +71,7 @@ Handoff checklist:
 - Ensure each user story has acceptance criteria.
 - Ensure APIs and events have machine-readable contracts (OpenAPI/AsyncAPI).
 - Provide small example payloads in `specs/examples/` when helpful.
+ - Provide `docs/DESIGN.md` when frontend present. Include token references used by components and a short export guide (example: `npx @google/design.md export --format json-tailwind docs/DESIGN.md > tailwind.theme.json`). Validate DESIGN.md with the linter as part of handoff.
 
 ## 4. Test
 
