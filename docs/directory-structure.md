@@ -25,15 +25,18 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 
 ```text
 ├── specs/
-│   ├── DESIGN.md                           # Optional: design tokens (YAML frontmatter) + rationale for frontends
+│   ├── DESIGN.md                           # Optional: Google DESIGN.md tokens (YAML frontmatter) + rationale for frontends
 │   ├── PRD.md                              # Product Requirement Definition: high-level goals and success metrics
-│   ├── features/
-│   │   └── <feature-name>/
-│   │       ├── feature.md                  # Feature description: overview, scope, UX flows
-│   │       ├── rules.md                    # Business rules and invariants for the feature
-│   │       └── user-stories/
-│   │           └── us-<id>/
-│   │               └── user-story.md       # Focused user story with acceptance criteria
+│   ├── capabilities/
+│   │   ├── <capability-name>/
+│   │   │   └── capability.md                # Product capability grouping related features
+│   │   └── features/
+│   │       └── <feature-name>/
+│   │           ├── feature.md                  # Feature description: overview, scope, UX flows
+│   │           ├── rules.md                    # Business rules and invariants for the feature
+│   │           └── user-stories/
+│   │               └── us-<id>/
+│   │                   └── user-story.md       # Focused user story with acceptance criteria
 │   ├── personas/
 │   │   └── <persona-name>/
 │   │       └── persona.md                  # Persona profile and motivations
@@ -55,8 +58,8 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 │   │       └── events/                     # Optional: async event contracts (AsyncAPI)
 │   │           └── <event-name>/
 │   │               └── asyncapi.yaml
-│   └── language/                           # Optional: domain language, ontologies, change log
-│       ├── <domain>.ttl                    # RDF/Turtle ontology (optional)
+│   └── language/                           # Domain ontologies defining ubiquitous language and change log
+│       ├── <domain>.ttl                    # RDF/Turtle ontology
 ├── ops/
 │   ├── runbooks/
 │   │   └── <date>-<title>.md               # Operational runbooks and incident playbooks
@@ -74,6 +77,7 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 
 - `specs/` — Primary location for product documentation. Keep narrative content, decision records, and structured artifacts here. Files under `specs/` are the canonical source of truth for product behaviour.
 - `PRD.md` — High-level product requirements. Describe goals, target users, non-functional requirements, and success metrics.
+- `capabilities/` — Product-level capabilities. Each capability groups one or more related features around a meaningful outcome or behavioral area and may span multiple releases.
 - `DESIGN.md` describing design tokens (YAML frontmatter) and human rationale. Use the DESIGN.md schema to expose colors, typography, spacing, component tokens, and exportable derivatives (Tailwind/CSS).
 - `features/` — Each feature gets its own folder containing a `feature.md` for narrative, `rules.md` for business logic, and a `user-stories/` subfolder for testable stories.
 - `personas/` — Short profiles of representative users. Use these to drive acceptance criteria and prioritization.

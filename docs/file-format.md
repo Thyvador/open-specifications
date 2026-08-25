@@ -91,6 +91,7 @@ Agents and automation SHOULD prefer adding `generated` when exporting artifacts,
 | `urn:open-specs:doc` | Generic documentation such as guides, how-tos, background notes, and non-normative material. |
 | `urn:open-specs:spec` | Formal specification describing product- or component-level contracts, requirements, and normative rules. Use for canonical, authoritative definitions. |
 | `urn:open-specs:prd` | Product Requirement Document (PRD) describing goals, target users, success metrics, constraints, and a high-level roadmap. Typically stored as `specs/PRD.md`. |
+| `urn:open-specs:capability` | Product capability grouping related features around a meaningful outcome or behavioral area. Typically stored as `specs/capabilities/<capability>/capability.md`. |
 | `urn:open-specs:example` | Example data, fixtures, or snippets that illustrate usage of another document. Frontmatter SHOULD include a `for` field referencing the related document. |
 | `urn:open-specs:feature` | Feature description covering intent, scope, UX flows, and constraints. |
 | `urn:open-specs:user-story` | User story that captures a user scenario and acceptance criteria; small, testable, and focused. |

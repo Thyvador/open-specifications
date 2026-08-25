@@ -33,17 +33,14 @@ State related outcomes and capabilities explicitly excluded from scope.
 
 Link primary and secondary personas, for example [Workspace Administrator](/specs/personas/workspace-admin/persona.md).
 
-## High-Level Capabilities
+## Capabilities
 
-Describe what the product should enable, prevent, or communicate. Do not specify UI components, architecture, technology, APIs, or implementation details.
+Describe substantial product outcomes or behavioral areas. Each capability must group several related features and remain implementation-neutral. Create a linked [capability document](/specs/capabilities/<capability>/capability.md) for each capability.
 
-## User Outcomes and Behaviors
+- [Capability name](/specs/capabilities/<capability>/capability.md)
+- [Another capability name](/specs/capabilities/<capability>/another-capability.md)
 
-Describe what users should be able to do and what behavior should change.
-
-## Requirements
-
-List testable product requirements. Use identifiers when traceability is needed, such as `REQ-001`.
+Capabilities may span multiple releases. Detailed feature behavior belongs in design-stage feature documents.
 
 ## Constraints and Non-Functional Requirements
 
