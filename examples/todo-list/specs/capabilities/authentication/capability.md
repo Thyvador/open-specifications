@@ -41,7 +41,7 @@ Users can establish a consistent identity, access protected task information, en
 
 ## Related Features
 
-The design stage should create several feature documents, including:
+This capability is decomposed into several feature documents:
 
 - [Register an account](/examples/todo-list/specs/features/authentication/register/feature.md)
 - [Sign in and sign out](/examples/todo-list/specs/features/authentication/session/feature.md)

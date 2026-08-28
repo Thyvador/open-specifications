@@ -43,7 +43,7 @@ Users can maintain a trustworthy list of work, understand task state, and return
 
 ## Related Features
 
-The design stage should create several feature documents, including:
+This capability is decomposed into several feature documents:
 
 - [Create tasks](/examples/todo-list/specs/features/task-management/create-tasks/feature.md)
 - [View and filter tasks](/examples/todo-list/specs/features/task-management/view-tasks/feature.md)

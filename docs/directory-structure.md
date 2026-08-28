@@ -35,7 +35,7 @@ The tree below shows the recommended layout for a single-app repository. Use it 
 │   │           ├── feature.md                  # Feature description: overview, scope, UX flows
 │   │           ├── rules.md                    # Business rules and invariants for the feature
 │   │           └── user-stories/
-│   │               └── us-<id>/
+│   │               └── <us-name>/
 │   │                   └── user-story.md       # Focused user story with acceptance criteria
 │   ├── personas/
 │   │   └── <persona-name>/

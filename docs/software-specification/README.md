@@ -66,7 +66,7 @@ Functional design captures features, user stories, business rules, and the domai
 - Semantic language / ontology: If you need canonical terms or an ontology, place machine-readable artifacts under `specs/language/`.
 - Design tokens / visual system: If product includes frontend (web, mobile, desktop), include an optional `specs/DESIGN.md` at repository root under `specs/`. Use YAML frontmatter for tokens (colors, typography, spacing, rounded, components) and prose for rationale. This file enables automated exports (Tailwind, CSS, token JSON) and linting via `npx @google/design.md lint docs/DESIGN.md`.
 - Features: For each feature, create `specs/features/<feature>/feature.md` describing purpose, scope, and UX flows.
-- User stories: Draft small, testable stories under `specs/features/<feature>/user-stories/us-<id>/user-story.md` with clear acceptance criteria.
+- User stories: Draft small, testable stories under `specs/features/<feature>/user-stories/<us-name>/user-story.md` with clear acceptance criteria.
 - Business rules: Record precise invariants and rule logic in `specs/features/<feature>/rules.md` so tests and agents can validate behavior.
 
 Functional deliverables are the primary source for acceptance tests and product validation.
