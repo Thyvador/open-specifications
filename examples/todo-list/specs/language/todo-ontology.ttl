@@ -1,0 +1,40 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix todo: <https://example.invalid/todo#> .
+@prefix status: <https://example.invalid/todo/status#> .
+
+todo:User a owl:Class ;
+    rdfs:label "User" .
+
+todo:Task a owl:Class ;
+    rdfs:label "Task" .
+
+todo:TaskStatus a owl:Class ;
+    rdfs:label "Task status" .
+status:canTransitionTo a owl:ObjectProperty ;
+    rdfs:domain todo:TaskStatus ;
+    rdfs:range todo:TaskStatus .
+
+status:Todo a status:TaskStatus ;
+    rdfs:label "Todo" .
+status:Todo status:canTransitionTo status:InProgress .
+
+status:InProgress a status:TaskStatus ;
+    rdfs:label "In progress" .
+status:InProgress status:canTransitionTo status:Completed .
+status:InProgress status:canTransitionTo status:Todo .
+
+status:Completed a status:TaskStatus ;
+    rdfs:label "Completed" .
+
+todo:owns a owl:ObjectProperty ;
+    rdfs:domain todo:User ;
+    rdfs:range todo:Task .
+
+todo:hasStatus a owl:ObjectProperty ;
+    rdfs:domain todo:Task ;
+    rdfs:range todo:TaskStatus .
+todo:hasTitle a owl:DatatypeProperty ;
+    rdfs:domain todo:Task ;
+    rdfs:range rdfs:Literal .
